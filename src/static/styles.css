@@ -28,6 +28,28 @@ header h1 {
   margin-bottom: 10px;
 }
 
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.header-content > div {
+  flex: 1;
+}
+
+.icon-button {
+  background-color: white;
+  color: #1a237e;
+  white-space: nowrap;
+}
+
+.icon-button:hover {
+  background-color: #e8eaf6;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -190,6 +212,67 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal:not(.hidden) {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  width: min(400px, calc(100% - 40px));
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.modal-content h3 {
+  color: #1a237e;
+  margin-bottom: 18px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  color: #333;
+  font-size: 24px;
+  padding: 2px 8px;
+}
+
+.modal-close:hover {
+  background: transparent;
+  color: #c62828;
+}
+
+@media (max-width: 600px) {
+  .header-content {
+    align-items: flex-start;
+  }
+
+  .header-content h1 {
+    font-size: 22px;
+  }
+
+  .header-content h2 {
+    font-size: 16px;
+  }
+
+  .icon-button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
 }
 
 footer {
